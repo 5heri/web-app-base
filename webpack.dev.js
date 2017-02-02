@@ -15,15 +15,12 @@ module.exports = {
   devtool: 'cheap-module-source-map',
 
   entry: {
-    portalrenderer: './src/js/views/main.js'
+    portalrenderer: './docs/src/client.js'
   },
 
   output: {
-    path: path.join(__dirname, '/build'),
-    filename: 'js/[name].js',
-    library: 'PortalRenderer',
-    libraryTarget: 'umd',
-    umdNamedDefine: true
+    path: path.join(__dirname, '/docs'),
+    filename: 'client.js'
   },
 
   resolve: {

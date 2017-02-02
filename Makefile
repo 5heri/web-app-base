@@ -15,8 +15,8 @@ npm_install:
 server:
 	@PORT=8000 NODE_ENV=production $(GULP_BIN) server
 
-dev:
-	@$(GULP_BIN) dev
+dev: 
+	@$(GULP_BIN) dev-server
 
 build:
 	@$(GULP_BIN) build
@@ -27,11 +27,11 @@ deploy_assets:
 test:
 	@$(GULP_BIN) test
 
-test_ci:
-	@$(GULP_BIN) test_ci
-
-version: $(GULP_BIN)
-	sh ./bin/detect_git-sha.sh
+# test_ci:
+# 	@$(GULP_BIN) test_ci
+#
+# version: $(GULP_BIN)
+# 	sh ./bin/detect_git-sha.sh
 
 lint:
 	@$(GULP_BIN) eslint
@@ -39,7 +39,7 @@ lint:
 stylelint:
 	@$(GULP_BIN) stylelint
 
-e2e:
-	@$(GULP_BIN) e2e
+# e2e:
+# 	@$(GULP_BIN) e2e
 
-.PHONY: default clean install server dev build test test_ci version lint stylelint e2e e2e-dev
+.PHONY: default clean install server dev build test lint stylelint
