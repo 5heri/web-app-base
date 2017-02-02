@@ -19,7 +19,6 @@ dev:
 	@$(GULP_BIN) dev
 
 build:
-	@$(GULP_BIN) git-sha
 	@$(GULP_BIN) build
 
 deploy_assets:
