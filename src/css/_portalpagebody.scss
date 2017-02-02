@@ -1,0 +1,200 @@
+@import './common';
+@import './images';
+
+.portal-page-body {
+  min-height: calc(100% - #{$portal-footer-height});
+  background-color: $white;
+  box-shadow: 0 0 24px rgba($black, 0.08);
+
+  input[type='text']:focus {
+    outline-color: transparent;
+    outline-style: none;
+  }
+
+  .logo-image {
+    @include full-width-section;
+
+    height: 170px;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    &.no-image {
+      padding: 10px;
+
+      .import-zone {
+        height: 150px;
+
+        .logo {
+          background: url('#{$no-image-placeholder}') center no-repeat;
+          background-size: cover;
+        }
+
+        .text {
+          padding: 0 40px;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+  .portal-content {
+    padding: 30px 25px 20px 25px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top;
+
+    @include portal-responsive($larger-than-mobile) {
+      padding: 40px 40px 20px 40px;
+    }
+
+    &.has-logo {
+      padding-top: 0 !important;
+    }
+
+    // Mimic styles from .quill .ql-editor
+    .inline-content {
+      word-wrap: break-word;
+      white-space: pre-wrap;
+      tab-size: 4;
+    }
+
+    .tos-text {
+      display: block;
+      margin-bottom: 10px;
+      color: $black;
+      font-weight: $bold-font-weight;
+      font-size: 9px;
+      text-align: center;
+    }
+
+    .sms-tos-text {
+      margin-top: -10px;
+      margin-bottom: 15px;
+
+      label {
+        display: block;
+        font-size: 10px;
+        line-height: 11px;
+      }
+    }
+
+    .consent-text {
+      font-size: 10px;
+      line-height: 11px;
+
+      p {
+        margin: 10px 0;
+      }
+    }
+
+    .message {
+      &.is-link {
+        cursor: pointer;
+      }
+
+      &.portal-image {
+        @include full-width-section;
+
+        > img {
+          display: inline-block;
+          width: 100%;
+          max-height: 300px;
+          margin-bottom: -7px;
+        }
+      }
+    }
+
+    .button,
+    .button-channel {
+      // TODO(@xeniatay): the editor's backgroundColor overrides the hover and active states
+      // So we need to handle the darkening/lightening with JS
+      @include action-button;
+      @include portal-button;
+
+      p {
+        margin: 0;
+      }
+    }
+
+    .button-channel {
+      text-align: left;
+    }
+
+    .link {
+      @include button($zenbeach-green, transparent, transparent);
+      @include portal-button;
+
+      margin: 0 auto 15px auto;
+      height: auto;
+    }
+
+    .floating-label-text-field,
+    .sms-tos-text,
+    .consent-text {
+      margin: 0 auto 20px auto;
+      width: 100%;
+      max-width: 325px;
+
+      @include portal-responsive($larger-than-mobile) {
+        max-width: 310px;
+      }
+    }
+
+    .birthday-section {
+      @include clearfix;
+      border-top: 1px solid $black-alpha-20;
+
+      .birthday-fields {
+        @include clearfix;
+
+        .floating-label-text-field {
+          @include span-columns(6);
+          @include omega(6n);
+          margin-top: 10px;
+        }
+      }
+    }
+
+    .social-section {
+      text-align: center;
+      margin-left: -25px;
+      margin-right: -25px;
+
+      @include portal-responsive($larger-than-mobile) {
+        width: calc(100% + 80px);
+        margin-left: -40px;
+      }
+
+      .buttons-container {
+        display: inline-block;
+        margin-top: 12px;
+        line-height: 0;
+
+        .button-social {
+          margin-right: 20px;
+
+          .fa {
+            font-size: 26px;
+            line-height: 50px;
+          }
+
+          &:last-child {
+            margin-right: 0;
+          }
+
+          &.facebook {
+            @include button-round($facebook-color, $white);
+          }
+
+          &.twitter {
+            @include button-round($twitter-color, $white);
+          }
+
+          &.instagram {
+            @include button-round($instagram-color, $white);
+          }
+        }
+      }
+    }
+  }
+}

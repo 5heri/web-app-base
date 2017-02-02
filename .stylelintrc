@@ -1,0 +1,10 @@
+{
+  "rules": {
+    "block-no-empty": true,
+    "declaration-colon-space-after": "always",
+    "indentation": [2, {
+      "except": ["value"]
+    }],
+    "max-empty-lines": 1
+  }
+}

@@ -1,0 +1,1479 @@
+/* Commmon code duplicated from Wifast-Base.
+ * - common/css/_floatinglabeltextfield.scss
+ * IMPORTANT: Changes to this file MUST also be made in Wifast-Base to maintain code consistency
+ */
+/* Commmon code duplicated from Wifast-Base.
+ * - common/css/_variables.scss
+ * IMPORTANT: Changes to this file MUST also be made in Wifast-Base to maintain code consistency
+ */
+/**
+ * Global variables from the style guide
+ */
+/* Commmon code duplicated from Wifast-Base.
+ * - common/css/_palettes.scss
+ * IMPORTANT: Changes to this file MUST also be made in Wifast-Base to maintain code consistency
+ */
+/**
+ * Color scheme from the style guide
+ */
+/* Layout */
+/* Color Scheme */
+/* Typography */
+/* Font Sizes */
+/* Font Weights */
+/* Text Properties */
+/* Spacing */
+/* Z-index */
+/* Inputs */
+/* Inputs z-index */
+/* Animations */
+/* Media Queries */
+/* Sidebar */
+.floating-label-text-field {
+  font-family: "proxima-nova", "Proxima Nova", Arial Narrow, Optima, Times New Roman, Arial, sans-serif; }
+  .floating-label-text-field.fl-container {
+    position: relative;
+    height: 50px;
+    /* Input style against dark background */
+    /* State when label is floating above the input field */
+    /* State when input is focused */
+    /* State when the floating label is hidden */
+    /* State on input error */ }
+    .floating-label-text-field.fl-container .fl-label {
+      /* Needed here for smooth animation when label moves from the input field, and back to it */
+      -webkit-transform-origin: left top;
+      -moz-transform-origin: left top;
+      -ms-transform-origin: left top;
+      -o-transform-origin: left top;
+      transform-origin: left top;
+      -webkit-transition: 240ms;
+      -moz-transition: 240ms;
+      transition: 240ms;
+      position: absolute;
+      bottom: 5px;
+      left: 0;
+      z-index: 2;
+      margin-bottom: 0;
+      line-height: 20px;
+      color: #797979;
+      pointer-events: none; }
+    .floating-label-text-field.fl-container .fl-input-wrapper {
+      padding: 5px 0;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: 1;
+      width: 100%;
+      border-bottom: 1px solid rgba(18, 27, 31, 0.4);
+      margin-bottom: 1px; }
+      .floating-label-text-field.fl-container .fl-input-wrapper .fl-input {
+        padding: 0;
+        margin-bottom: 0;
+        height: auto;
+        line-height: 20px;
+        font-size: 16px;
+        border: 0;
+        border-radius: 0px;
+        background: transparent; }
+        .floating-label-text-field.fl-container .fl-input-wrapper .fl-input:-webkit-autofill {
+          -webkit-box-shadow: 0 0 0px 1000px white inset; }
+        .floating-label-text-field.fl-container .fl-input-wrapper .fl-input::-webkit-input-placeholder {
+          color: rgba(18, 27, 31, 0.4); }
+        .floating-label-text-field.fl-container .fl-input-wrapper .fl-input::-moz-placeholder {
+          color: rgba(18, 27, 31, 0.4); }
+        .floating-label-text-field.fl-container .fl-input-wrapper .fl-input:-moz-placeholder {
+          color: rgba(18, 27, 31, 0.4); }
+        .floating-label-text-field.fl-container .fl-input-wrapper .fl-input:-ms-input-placeholder {
+          color: rgba(18, 27, 31, 0.4); }
+    .floating-label-text-field.fl-container .show-pw {
+      position: absolute;
+      z-index: 2;
+      top: 31px;
+      right: 8px;
+      height: 10px;
+      width: 20px;
+      background-image: url("/static/images/elmo/login/icon-show.png");
+      background-size: 100% 100%;
+      cursor: pointer; }
+      .floating-label-text-field.fl-container .show-pw.shown {
+        background-image: url("/static/images/elmo/login/icon-hide.png"); }
+    .floating-label-text-field.fl-container .max-length {
+      position: absolute;
+      right: 0;
+      bottom: -21px;
+      font-size: 12px;
+      color: #797979; }
+    .floating-label-text-field.fl-container.dark .fl-label {
+      color: #a4afb3; }
+    .floating-label-text-field.fl-container.dark .fl-input-wrapper {
+      border-bottom: 1px solid #a4afb3; }
+      .floating-label-text-field.fl-container.dark .fl-input-wrapper .fl-input {
+        color: #a4afb3; }
+        .floating-label-text-field.fl-container.dark .fl-input-wrapper .fl-input::-webkit-input-placeholder {
+          color: #a4afb3; }
+        .floating-label-text-field.fl-container.dark .fl-input-wrapper .fl-input::-moz-placeholder {
+          color: #a4afb3; }
+        .floating-label-text-field.fl-container.dark .fl-input-wrapper .fl-input:-moz-placeholder {
+          color: #a4afb3; }
+        .floating-label-text-field.fl-container.dark .fl-input-wrapper .fl-input:-ms-input-placeholder {
+          color: #a4afb3; }
+    .floating-label-text-field.fl-container.floating .fl-label {
+      -webkit-transform: translateY(-18px) scale(0.65);
+      -moz-transform: translateY(-18px) scale(0.65);
+      -ms-transform: translateY(-18px) scale(0.65);
+      -o-transform: translateY(-18px) scale(0.65);
+      transform: translateY(-18px) scale(0.65); }
+    .floating-label-text-field.fl-container.floating .fl-input-wrapper {
+      border-bottom: 1px solid rgba(18, 27, 31, 0.4); }
+      .floating-label-text-field.fl-container.floating .fl-input-wrapper .fl-input {
+        background-color: transparent; }
+    .floating-label-text-field.fl-container.active .fl-label {
+      color: #2e9941; }
+    .floating-label-text-field.fl-container.active .fl-input-wrapper {
+      border-bottom: 2px solid #2e9941;
+      margin-bottom: 0px; }
+    .floating-label-text-field.fl-container.hide-floating-label {
+      height: 30px; }
+      .floating-label-text-field.fl-container.hide-floating-label.floating .fl-label {
+        display: none; }
+    .floating-label-text-field.fl-container.error .fl-label {
+      color: #d0021b; }
+    .floating-label-text-field.fl-container.error .fl-input-wrapper {
+      border-bottom: 2px solid #d0021b;
+      margin-bottom: 0px; }
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+/* Commmon code duplicated from Wifast-Base.
+ * - common/css/_variables.scss
+ * IMPORTANT: Changes to this file MUST also be made in Wifast-Base to maintain code consistency
+ */
+/**
+ * Global variables from the style guide
+ */
+/* Commmon code duplicated from Wifast-Base.
+ * - common/css/_palettes.scss
+ * IMPORTANT: Changes to this file MUST also be made in Wifast-Base to maintain code consistency
+ */
+/**
+ * Color scheme from the style guide
+ */
+/* Layout */
+/* Color Scheme */
+/* Typography */
+/* Font Sizes */
+/* Font Weights */
+/* Text Properties */
+/* Spacing */
+/* Z-index */
+/* Inputs */
+/* Inputs z-index */
+/* Animations */
+/* Media Queries */
+/* Sidebar */
+/* Commmon code duplicated from Wifast-Base.
+ * - common/css/_palettes.scss
+ * IMPORTANT: Changes to this file MUST also be made in Wifast-Base to maintain code consistency
+ */
+/**
+ * Color scheme from the style guide
+ */
+/* Commmon code duplicated from Wifast-Base.
+ * - common/css/_mixins.scss
+ * IMPORTANT: Changes to this file MUST also be made in Wifast-Base to maintain code consistency
+ */
+/**
+ * Mixins for commonly used styles
+ */
+/* Commmon code duplicated from Wifast-Base.
+ * - common/css/_button.scss
+ * IMPORTANT: Changes to this file MUST also be made in Wifast-Base to maintain code consistency
+ */
+/**
+ * Button styles from the style guide
+ */
+button[disabled],
+[disabled] button, button.disabled,
+.disabled button {
+  -webkit-transition: all 0.1s linear;
+  -moz-transition: all 0.1s linear;
+  transition: all 0.1s linear;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  padding: 10.5px 24px 8.75px 24px;
+  height: 36px;
+  white-space: nowrap;
+  font-family: "proxima-nova", "Proxima Nova", Arial Narrow, Optima, Times New Roman, Arial, sans-serif;
+  font-size: 0.92857rem;
+  font-weight: 600;
+  line-height: 14px;
+  text-transform: none;
+  text-align: center;
+  letter-spacing: 0.04em;
+  border-radius: 3px;
+  border: 1px solid transparent;
+  outline: none;
+  background-color: rgba(239, 242, 243, 0.6);
+  color: rgba(18, 27, 31, 0.2);
+  cursor: not-allowed; }
+  button[disabled]:hover,
+  [disabled] button:hover, button.disabled:hover,
+  .disabled button:hover {
+    background-color: rgba(244, 246, 247, 0.66); }
+  button[disabled]:active,
+  [disabled] button:active, button.disabled:active,
+  .disabled button:active {
+    background-color: rgba(158, 163, 165, 0.68); }
+  button[disabled] .fa,
+  [disabled] button .fa, button.disabled .fa,
+  .disabled button .fa {
+    float: left;
+    margin-right: 12px;
+    width: 1rem;
+    height: 1rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center; }
+  button[disabled]:hover, button[disabled]:active,
+  [disabled] button:hover,
+  [disabled] button:active, button.disabled:hover, button.disabled:active,
+  .disabled button:hover,
+  .disabled button:active {
+    background-color: rgba(239, 242, 243, 0.6);
+    border-color: transparent; }
+
+.button-action {
+  -webkit-transition: all 0.1s linear;
+  -moz-transition: all 0.1s linear;
+  transition: all 0.1s linear;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  padding: 10.5px 24px 8.75px 24px;
+  height: 36px;
+  white-space: nowrap;
+  font-family: "proxima-nova", "Proxima Nova", Arial Narrow, Optima, Times New Roman, Arial, sans-serif;
+  font-size: 0.92857rem;
+  font-weight: 600;
+  line-height: 14px;
+  text-transform: none;
+  text-align: center;
+  letter-spacing: 0.04em;
+  border-radius: 3px;
+  border: 1px solid transparent;
+  outline: none;
+  background-color: #2e9941;
+  color: white; }
+  .button-action:hover {
+    background-color: #4da85e; }
+  .button-action:active {
+    background-color: #28803a; }
+  .button-action .fa {
+    float: left;
+    margin-right: 12px;
+    width: 1rem;
+    height: 1rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center; }
+  .button-action[disabled],
+  [disabled] .button-action, .button-action.disabled,
+  .disabled .button-action {
+    -webkit-transition: all 0.1s linear;
+    -moz-transition: all 0.1s linear;
+    transition: all 0.1s linear;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    padding: 10.5px 24px 8.75px 24px;
+    height: 36px;
+    white-space: nowrap;
+    font-family: "proxima-nova", "Proxima Nova", Arial Narrow, Optima, Times New Roman, Arial, sans-serif;
+    font-size: 0.92857rem;
+    font-weight: 600;
+    line-height: 14px;
+    text-transform: none;
+    text-align: center;
+    letter-spacing: 0.04em;
+    border-radius: 3px;
+    border: 1px solid transparent;
+    outline: none;
+    background-color: rgba(239, 242, 243, 0.6);
+    color: rgba(18, 27, 31, 0.2);
+    cursor: not-allowed; }
+    .button-action[disabled]:hover,
+    [disabled] .button-action:hover, .button-action.disabled:hover,
+    .disabled .button-action:hover {
+      background-color: rgba(244, 246, 247, 0.66); }
+    .button-action[disabled]:active,
+    [disabled] .button-action:active, .button-action.disabled:active,
+    .disabled .button-action:active {
+      background-color: rgba(158, 163, 165, 0.68); }
+    .button-action[disabled] .fa,
+    [disabled] .button-action .fa, .button-action.disabled .fa,
+    .disabled .button-action .fa {
+      float: left;
+      margin-right: 12px;
+      width: 1rem;
+      height: 1rem;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center; }
+    .button-action[disabled]:hover, .button-action[disabled]:active,
+    [disabled] .button-action:hover,
+    [disabled] .button-action:active, .button-action.disabled:hover, .button-action.disabled:active,
+    .disabled .button-action:hover,
+    .disabled .button-action:active {
+      background-color: rgba(239, 242, 243, 0.6);
+      border-color: transparent; }
+
+.button-base {
+  -webkit-transition: all 0.1s linear;
+  -moz-transition: all 0.1s linear;
+  transition: all 0.1s linear;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  padding: 10.5px 24px 8.75px 24px;
+  height: 36px;
+  white-space: nowrap;
+  font-family: "proxima-nova", "Proxima Nova", Arial Narrow, Optima, Times New Roman, Arial, sans-serif;
+  font-size: 0.92857rem;
+  font-weight: 600;
+  line-height: 14px;
+  text-transform: none;
+  text-align: center;
+  letter-spacing: 0.04em;
+  border-radius: 3px;
+  border: 1px solid #eff2f3;
+  outline: none;
+  background-color: white;
+  color: #2e9941; }
+  .button-base:hover {
+    background-color: white; }
+  .button-base:active {
+    background-color: #d0d1d2; }
+  .button-base .fa {
+    float: left;
+    margin-right: 12px;
+    width: 1rem;
+    height: 1rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center; }
+  .button-base:hover {
+    background-color: #eaf5ec;
+    border-color: #2e9941; }
+  .button-base:active {
+    background-color: #d5ebd9;
+    border-color: #2e9941; }
+  .button-base[disabled],
+  [disabled] .button-base, .button-base.disabled,
+  .disabled .button-base {
+    -webkit-transition: all 0.1s linear;
+    -moz-transition: all 0.1s linear;
+    transition: all 0.1s linear;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    padding: 10.5px 24px 8.75px 24px;
+    height: 36px;
+    white-space: nowrap;
+    font-family: "proxima-nova", "Proxima Nova", Arial Narrow, Optima, Times New Roman, Arial, sans-serif;
+    font-size: 0.92857rem;
+    font-weight: 600;
+    line-height: 14px;
+    text-transform: none;
+    text-align: center;
+    letter-spacing: 0.04em;
+    border-radius: 3px;
+    border: 1px solid transparent;
+    outline: none;
+    background-color: rgba(239, 242, 243, 0.6);
+    color: rgba(18, 27, 31, 0.2);
+    cursor: not-allowed; }
+    .button-base[disabled]:hover,
+    [disabled] .button-base:hover, .button-base.disabled:hover,
+    .disabled .button-base:hover {
+      background-color: rgba(244, 246, 247, 0.66); }
+    .button-base[disabled]:active,
+    [disabled] .button-base:active, .button-base.disabled:active,
+    .disabled .button-base:active {
+      background-color: rgba(158, 163, 165, 0.68); }
+    .button-base[disabled] .fa,
+    [disabled] .button-base .fa, .button-base.disabled .fa,
+    .disabled .button-base .fa {
+      float: left;
+      margin-right: 12px;
+      width: 1rem;
+      height: 1rem;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center; }
+    .button-base[disabled]:hover, .button-base[disabled]:active,
+    [disabled] .button-base:hover,
+    [disabled] .button-base:active, .button-base.disabled:hover, .button-base.disabled:active,
+    .disabled .button-base:hover,
+    .disabled .button-base:active {
+      background-color: rgba(239, 242, 243, 0.6);
+      border-color: transparent; }
+
+/* Commmon code duplicated from Wifast-Base.
+ * - common/css/_importzone.scss
+ * IMPORTANT: Changes to this file MUST also be made in Wifast-Base to maintain code consistency
+ */
+/* Commmon code duplicated from Wifast-Base.
+ * - common/css/_mixins.scss
+ * IMPORTANT: Changes to this file MUST also be made in Wifast-Base to maintain code consistency
+ */
+/**
+ * Mixins for commonly used styles
+ */
+/* Commmon code duplicated from Wifast-Base.
+ * - common/css/_palettes.scss
+ * IMPORTANT: Changes to this file MUST also be made in Wifast-Base to maintain code consistency
+ */
+/**
+ * Color scheme from the style guide
+ */
+.import-zone {
+  cursor: pointer;
+  display: table;
+  height: 313px;
+  width: 100%;
+  border: dashed 1px rgba(18, 27, 31, 0.3);
+  border-radius: 5px;
+  background-color: rgba(239, 242, 243, 0.5); }
+  .import-zone.loading {
+    cursor: default; }
+  .import-zone > .loading-container {
+    position: absolute;
+    width: 54.5px;
+    height: 98.5px;
+    top: 50%;
+    left: 50%;
+    margin: -37px 0 0 -27px; }
+    .import-zone > .loading-container > .loading {
+      height: 100%;
+      background-image: url("/static/images/predefined/dashboard-loader.gif");
+      background-size: cover; }
+  .import-zone > .empty {
+    display: table-cell;
+    vertical-align: middle; }
+    .import-zone > .empty > .logo,
+    .import-zone > .empty > .error {
+      margin: 0 auto;
+      height: 67px;
+      width: 67px;
+      background-size: cover; }
+    .import-zone > .empty > .logo {
+      background-image: url("/static/images/predefined/placeholder@200px.png"); }
+    .import-zone > .empty > .error {
+      margin-bottom: 15px;
+      background-image: url("/static/images/predefined/upload-error@2x.png"); }
+    .import-zone > .empty > .text {
+      padding: 0 40px;
+      color: rgba(41, 63, 77, 0.5);
+      font-weight: 700;
+      text-align: center; }
+      .import-zone > .empty > .text em {
+        font-style: normal;
+        color: #2e9941;
+        text-transform: uppercase; }
+
+.image-upload-modal .modal-container {
+  width: 400px;
+  height: 458px;
+  padding: 20px 31px 34px; }
+  .image-upload-modal .modal-container .line {
+    margin: 20px -31px 24px;
+    border-top: solid 1px #eff2f3; }
+
+/* Commmon code duplicated from Wifast-Base.
+ * - portal/css/common.scss
+ * IMPORTANT: Changes to this file MUST also be made in Wifast-Base to maintain code consistency
+ */
+/**
+ * Common styles for Portal
+ */
+/* Dimensions */
+/* Z indexes */
+/**
+ * Common styles for Portal
+ */
+/* Button styles for Portal that override the default common buttons */
+/* Acts as a media query mixin but only applies the responsive
+   styles if the element is namespaced with '.responsive' */
+.portal-page-body {
+  min-height: calc(100% - 60px);
+  background-color: white;
+  box-shadow: 0 0 24px rgba(18, 27, 31, 0.08); }
+  .portal-page-body input[type='text']:focus {
+    outline-color: transparent;
+    outline-style: none; }
+  .portal-page-body .logo-image {
+    margin-left: -25px;
+    width: calc(100% + 50px);
+    height: 170px;
+    background-repeat: no-repeat;
+    background-position: center; }
+    @media screen and (min-width: 480.01px) {
+      .responsive .portal-page-body .logo-image {
+        width: calc(100% + 80px);
+        height: 241px;
+        margin-left: -40px; } }
+    .portal-page-body .logo-image.no-image {
+      padding: 10px; }
+      .portal-page-body .logo-image.no-image .import-zone {
+        height: 150px; }
+        .portal-page-body .logo-image.no-image .import-zone .logo {
+          background: url("data:image/png;base64,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") center no-repeat;
+          background-size: cover; }
+        .portal-page-body .logo-image.no-image .import-zone .text {
+          padding: 0 40px;
+          font-size: 12px; }
+  .portal-page-body .portal-content {
+    padding: 30px 25px 20px 25px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top; }
+    @media screen and (min-width: 480.01px) {
+      .responsive .portal-page-body .portal-content {
+        padding: 40px 40px 20px 40px; } }
+    .portal-page-body .portal-content.has-logo {
+      padding-top: 0 !important; }
+    .portal-page-body .portal-content .inline-content {
+      word-wrap: break-word;
+      white-space: pre-wrap;
+      tab-size: 4; }
+    .portal-page-body .portal-content .tos-text {
+      display: block;
+      margin-bottom: 10px;
+      color: #121b1f;
+      font-weight: 700;
+      font-size: 9px;
+      text-align: center; }
+    .portal-page-body .portal-content .sms-tos-text {
+      margin-top: -10px;
+      margin-bottom: 15px; }
+      .portal-page-body .portal-content .sms-tos-text label {
+        display: block;
+        font-size: 10px;
+        line-height: 11px; }
+    .portal-page-body .portal-content .consent-text {
+      font-size: 10px;
+      line-height: 11px; }
+      .portal-page-body .portal-content .consent-text p {
+        margin: 10px 0; }
+    .portal-page-body .portal-content .message.is-link {
+      cursor: pointer; }
+    .portal-page-body .portal-content .message.portal-image {
+      margin-left: -25px;
+      width: calc(100% + 50px); }
+      @media screen and (min-width: 480.01px) {
+        .responsive .portal-page-body .portal-content .message.portal-image {
+          width: calc(100% + 80px);
+          height: 241px;
+          margin-left: -40px; } }
+      .portal-page-body .portal-content .message.portal-image > img {
+        display: inline-block;
+        width: 100%;
+        max-height: 300px;
+        margin-bottom: -7px; }
+    .portal-page-body .portal-content .button,
+    .portal-page-body .portal-content .button-channel {
+      -webkit-transition: all 0.1s linear;
+      -moz-transition: all 0.1s linear;
+      transition: all 0.1s linear;
+      cursor: pointer;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      -ms-appearance: none;
+      -o-appearance: none;
+      appearance: none;
+      padding: 15px 24px 15px 24px;
+      height: 50px;
+      white-space: nowrap;
+      font-family: "proxima-nova", "Proxima Nova", Arial Narrow, Optima, Times New Roman, Arial, sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 20px;
+      text-transform: none;
+      text-align: center;
+      letter-spacing: 0.04em;
+      border-radius: 3px;
+      border: 1px solid transparent;
+      outline: none;
+      background-color: #2e9941;
+      color: white;
+      -webkit-transition: none;
+      -moz-transition: none;
+      transition: none;
+      display: block;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      margin: 0 auto 12px auto;
+      width: 100%;
+      max-width: 325px;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 20px;
+      border-radius: 2px;
+      text-transform: none; }
+      .portal-page-body .portal-content .button:hover,
+      .portal-page-body .portal-content .button-channel:hover {
+        background-color: #4da85e; }
+      .portal-page-body .portal-content .button:active,
+      .portal-page-body .portal-content .button-channel:active {
+        background-color: #28803a; }
+      .portal-page-body .portal-content .button .fa,
+      .portal-page-body .portal-content .button-channel .fa {
+        float: left;
+        margin-right: 12px;
+        width: 1rem;
+        height: 1rem;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center; }
+      .portal-page-body .portal-content .button[disabled],
+      [disabled] .portal-page-body .portal-content .button, .portal-page-body .portal-content .button.disabled,
+      .disabled .portal-page-body .portal-content .button,
+      .portal-page-body .portal-content .button-channel[disabled],
+      [disabled]
+      .portal-page-body .portal-content .button-channel,
+      .portal-page-body .portal-content .button-channel.disabled,
+      .disabled
+      .portal-page-body .portal-content .button-channel {
+        -webkit-transition: all 0.1s linear;
+        -moz-transition: all 0.1s linear;
+        transition: all 0.1s linear;
+        cursor: pointer;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        -ms-appearance: none;
+        -o-appearance: none;
+        appearance: none;
+        padding: 15px 24px 15px 24px;
+        height: 50px;
+        white-space: nowrap;
+        font-family: "proxima-nova", "Proxima Nova", Arial Narrow, Optima, Times New Roman, Arial, sans-serif;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 20px;
+        text-transform: none;
+        text-align: center;
+        letter-spacing: 0.04em;
+        border-radius: 3px;
+        border: 1px solid transparent;
+        outline: none;
+        background-color: rgba(239, 242, 243, 0.6);
+        color: rgba(18, 27, 31, 0.2);
+        cursor: not-allowed; }
+        .portal-page-body .portal-content .button[disabled]:hover,
+        [disabled] .portal-page-body .portal-content .button:hover, .portal-page-body .portal-content .button.disabled:hover,
+        .disabled .portal-page-body .portal-content .button:hover,
+        .portal-page-body .portal-content .button-channel[disabled]:hover,
+        [disabled]
+        .portal-page-body .portal-content .button-channel:hover,
+        .portal-page-body .portal-content .button-channel.disabled:hover,
+        .disabled
+        .portal-page-body .portal-content .button-channel:hover {
+          background-color: rgba(244, 246, 247, 0.66); }
+        .portal-page-body .portal-content .button[disabled]:active,
+        [disabled] .portal-page-body .portal-content .button:active, .portal-page-body .portal-content .button.disabled:active,
+        .disabled .portal-page-body .portal-content .button:active,
+        .portal-page-body .portal-content .button-channel[disabled]:active,
+        [disabled]
+        .portal-page-body .portal-content .button-channel:active,
+        .portal-page-body .portal-content .button-channel.disabled:active,
+        .disabled
+        .portal-page-body .portal-content .button-channel:active {
+          background-color: rgba(158, 163, 165, 0.68); }
+        .portal-page-body .portal-content .button[disabled] .fa,
+        [disabled] .portal-page-body .portal-content .button .fa, .portal-page-body .portal-content .button.disabled .fa,
+        .disabled .portal-page-body .portal-content .button .fa,
+        .portal-page-body .portal-content .button-channel[disabled] .fa,
+        [disabled]
+        .portal-page-body .portal-content .button-channel .fa,
+        .portal-page-body .portal-content .button-channel.disabled .fa,
+        .disabled
+        .portal-page-body .portal-content .button-channel .fa {
+          float: left;
+          margin-right: 12px;
+          width: 1rem;
+          height: 1rem;
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center; }
+        .portal-page-body .portal-content .button[disabled]:hover, .portal-page-body .portal-content .button[disabled]:active,
+        [disabled] .portal-page-body .portal-content .button:hover,
+        [disabled] .portal-page-body .portal-content .button:active, .portal-page-body .portal-content .button.disabled:hover, .portal-page-body .portal-content .button.disabled:active,
+        .disabled .portal-page-body .portal-content .button:hover,
+        .disabled .portal-page-body .portal-content .button:active,
+        .portal-page-body .portal-content .button-channel[disabled]:hover,
+        .portal-page-body .portal-content .button-channel[disabled]:active,
+        [disabled]
+        .portal-page-body .portal-content .button-channel:hover,
+        [disabled]
+        .portal-page-body .portal-content .button-channel:active,
+        .portal-page-body .portal-content .button-channel.disabled:hover,
+        .portal-page-body .portal-content .button-channel.disabled:active,
+        .disabled
+        .portal-page-body .portal-content .button-channel:hover,
+        .disabled
+        .portal-page-body .portal-content .button-channel:active {
+          background-color: rgba(239, 242, 243, 0.6);
+          border-color: transparent; }
+      @media screen and (min-width: 480.01px) {
+        .responsive .portal-page-body .portal-content .button, .responsive
+        .portal-page-body .portal-content .button-channel {
+          max-width: 310px; } }
+      .portal-page-body .portal-content .button i,
+      .portal-page-body .portal-content .button-channel i {
+        line-height: 1.2;
+        text-align: center; }
+      .portal-page-body .portal-content .button[disabled],
+      [disabled] .portal-page-body .portal-content .button, .portal-page-body .portal-content .button.disabled,
+      .disabled .portal-page-body .portal-content .button,
+      .portal-page-body .portal-content .button-channel[disabled],
+      [disabled]
+      .portal-page-body .portal-content .button-channel,
+      .portal-page-body .portal-content .button-channel.disabled,
+      .disabled
+      .portal-page-body .portal-content .button-channel {
+        opacity: 0.5; }
+      .portal-page-body .portal-content .button p,
+      .portal-page-body .portal-content .button-channel p {
+        margin: 0; }
+    .portal-page-body .portal-content .button-channel {
+      text-align: left; }
+    .portal-page-body .portal-content .link {
+      -webkit-transition: all 0.1s linear;
+      -moz-transition: all 0.1s linear;
+      transition: all 0.1s linear;
+      cursor: pointer;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      -ms-appearance: none;
+      -o-appearance: none;
+      appearance: none;
+      padding: 15px 24px 15px 24px;
+      height: 50px;
+      white-space: nowrap;
+      font-family: "proxima-nova", "Proxima Nova", Arial Narrow, Optima, Times New Roman, Arial, sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 20px;
+      text-transform: none;
+      text-align: center;
+      letter-spacing: 0.04em;
+      border-radius: 3px;
+      border: 1px solid transparent;
+      outline: none;
+      background-color: transparent;
+      color: #58c48c;
+      -webkit-transition: none;
+      -moz-transition: none;
+      transition: none;
+      display: block;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      margin: 0 auto 12px auto;
+      width: 100%;
+      max-width: 325px;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 20px;
+      border-radius: 2px;
+      text-transform: none;
+      margin: 0 auto 15px auto;
+      height: auto; }
+      .portal-page-body .portal-content .link:hover {
+        background-color: rgba(255, 255, 255, 0.15); }
+      .portal-page-body .portal-content .link:active {
+        background-color: rgba(18, 27, 31, 0.2); }
+      .portal-page-body .portal-content .link .fa {
+        float: left;
+        margin-right: 12px;
+        width: 1rem;
+        height: 1rem;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center; }
+      @media screen and (min-width: 480.01px) {
+        .responsive .portal-page-body .portal-content .link {
+          max-width: 310px; } }
+      .portal-page-body .portal-content .link i {
+        line-height: 1.2;
+        text-align: center; }
+      .portal-page-body .portal-content .link[disabled],
+      [disabled] .portal-page-body .portal-content .link, .portal-page-body .portal-content .link.disabled,
+      .disabled .portal-page-body .portal-content .link {
+        opacity: 0.5; }
+    .portal-page-body .portal-content .floating-label-text-field,
+    .portal-page-body .portal-content .sms-tos-text,
+    .portal-page-body .portal-content .consent-text {
+      margin: 0 auto 20px auto;
+      width: 100%;
+      max-width: 325px; }
+      @media screen and (min-width: 480.01px) {
+        .responsive .portal-page-body .portal-content .floating-label-text-field, .responsive
+        .portal-page-body .portal-content .sms-tos-text, .responsive
+        .portal-page-body .portal-content .consent-text {
+          max-width: 310px; } }
+    .portal-page-body .portal-content .birthday-section {
+      border-top: 1px solid rgba(18, 27, 31, 0.2); }
+      .portal-page-body .portal-content .birthday-section:after {
+        content: "";
+        display: table;
+        clear: both; }
+      .portal-page-body .portal-content .birthday-section .birthday-fields:after {
+        content: "";
+        display: table;
+        clear: both; }
+      .portal-page-body .portal-content .birthday-section .birthday-fields .floating-label-text-field {
+        float: left;
+        display: block;
+        margin-right: 2.35765%;
+        width: 48.82117%;
+        margin-top: 10px; }
+        .portal-page-body .portal-content .birthday-section .birthday-fields .floating-label-text-field:last-child {
+          margin-right: 0; }
+        .portal-page-body .portal-content .birthday-section .birthday-fields .floating-label-text-field:nth-child(6n) {
+          margin-right: 0; }
+        .portal-page-body .portal-content .birthday-section .birthday-fields .floating-label-text-field:nth-child(6n+1) {
+          clear: left; }
+    .portal-page-body .portal-content .social-section {
+      text-align: center;
+      margin-left: -25px;
+      margin-right: -25px; }
+      @media screen and (min-width: 480.01px) {
+        .responsive .portal-page-body .portal-content .social-section {
+          width: calc(100% + 80px);
+          margin-left: -40px; } }
+      .portal-page-body .portal-content .social-section .buttons-container {
+        display: inline-block;
+        margin-top: 12px;
+        line-height: 0; }
+        .portal-page-body .portal-content .social-section .buttons-container .button-social {
+          margin-right: 20px; }
+          .portal-page-body .portal-content .social-section .buttons-container .button-social .fa {
+            font-size: 26px;
+            line-height: 50px; }
+          .portal-page-body .portal-content .social-section .buttons-container .button-social:last-child {
+            margin-right: 0; }
+          .portal-page-body .portal-content .social-section .buttons-container .button-social.facebook {
+            width: 50px;
+            height: 50px;
+            display: inline-block;
+            line-height: 50px;
+            background-color: #3b5999;
+            color: white;
+            border-radius: 50%; }
+          .portal-page-body .portal-content .social-section .buttons-container .button-social.twitter {
+            width: 50px;
+            height: 50px;
+            display: inline-block;
+            line-height: 50px;
+            background-color: #73cbf3;
+            color: white;
+            border-radius: 50%; }
+          .portal-page-body .portal-content .social-section .buttons-container .button-social.instagram {
+            width: 50px;
+            height: 50px;
+            display: inline-block;
+            line-height: 50px;
+            background-color: #121b1f;
+            color: white;
+            border-radius: 50%; }
+/* Commmon code duplicated from Wifast-Base.
+ * - common/css/notification-bar/_notificationbar.scss
+ * IMPORTANT: Changes to this file MUST also be made in Wifast-Base to maintain code consistency
+ */
+/* Commmon code duplicated from Wifast-Base.
+ * - common/css/_variables.scss
+ * IMPORTANT: Changes to this file MUST also be made in Wifast-Base to maintain code consistency
+ */
+/**
+ * Global variables from the style guide
+ */
+/* Commmon code duplicated from Wifast-Base.
+ * - common/css/_palettes.scss
+ * IMPORTANT: Changes to this file MUST also be made in Wifast-Base to maintain code consistency
+ */
+/**
+ * Color scheme from the style guide
+ */
+/* Layout */
+/* Color Scheme */
+/* Typography */
+/* Font Sizes */
+/* Font Weights */
+/* Text Properties */
+/* Spacing */
+/* Z-index */
+/* Inputs */
+/* Inputs z-index */
+/* Animations */
+/* Media Queries */
+/* Sidebar */
+/* Commmon code duplicated from Wifast-Base.
+ * - common/css/_mixins.scss
+ * IMPORTANT: Changes to this file MUST also be made in Wifast-Base to maintain code consistency
+ */
+/**
+ * Mixins for commonly used styles
+ */
+.notification-bar {
+  position: fixed;
+  top: 0;
+  left: 225px;
+  width: -webkit-calc(100% - 225px);
+  width: calc(100% - 225px);
+  z-index: 10000; }
+  .notification-bar .notification {
+    position: relative;
+    width: 100%;
+    height: 46px;
+    padding: 14px 0;
+    text-align: center;
+    color: white;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.23); }
+    .notification-bar .notification > .button-close {
+      cursor: pointer;
+      position: absolute;
+      top: 14px;
+      right: 11px;
+      width: 18px;
+      height: 19px;
+      background: url(/static/images/elmo/modal/ic-close@2x.png) center no-repeat;
+      background-size: contain; }
+    .notification-bar .notification.success {
+      background-color: #2e9941; }
+    .notification-bar .notification.error {
+      background-color: #d0021b; }
+    .notification-bar .notification.warning {
+      background-color: #ffbe47; }
+    .notification-bar .notification.info {
+      background-color: #3498db; }
+  .notification-bar .fade-appear {
+    opacity: 0.01; }
+    .notification-bar .fade-appear.fade-appear-active {
+      opacity: 1;
+      transition: opacity 300ms ease-in; }
+  .notification-bar .fade-leave {
+    opacity: 1; }
+    .notification-bar .fade-leave.fade-leave-active {
+      opacity: 0.01;
+      transition: opacity 300ms ease-in; }
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+/* Commmon code duplicated from Wifast-Base.
+ * - common/css/_variables.scss
+ * IMPORTANT: Changes to this file MUST also be made in Wifast-Base to maintain code consistency
+ */
+/**
+ * Global variables from the style guide
+ */
+/* Commmon code duplicated from Wifast-Base.
+ * - common/css/_palettes.scss
+ * IMPORTANT: Changes to this file MUST also be made in Wifast-Base to maintain code consistency
+ */
+/**
+ * Color scheme from the style guide
+ */
+/* Layout */
+/* Color Scheme */
+/* Typography */
+/* Font Sizes */
+/* Font Weights */
+/* Text Properties */
+/* Spacing */
+/* Z-index */
+/* Inputs */
+/* Inputs z-index */
+/* Animations */
+/* Media Queries */
+/* Sidebar */
+/* Commmon code duplicated from Wifast-Base.
+ * - common/css/_palettes.scss
+ * IMPORTANT: Changes to this file MUST also be made in Wifast-Base to maintain code consistency
+ */
+/**
+ * Color scheme from the style guide
+ */
+/* Commmon code duplicated from Wifast-Base.
+ * - common/css/_mixins.scss
+ * IMPORTANT: Changes to this file MUST also be made in Wifast-Base to maintain code consistency
+ */
+/**
+ * Mixins for commonly used styles
+ */
+/* Commmon code duplicated from Wifast-Base.
+ * - common/css/_button.scss
+ * IMPORTANT: Changes to this file MUST also be made in Wifast-Base to maintain code consistency
+ */
+/**
+ * Button styles from the style guide
+ */
+button[disabled],
+[disabled] button, button.disabled,
+.disabled button {
+  -webkit-transition: all 0.1s linear;
+  -moz-transition: all 0.1s linear;
+  transition: all 0.1s linear;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  padding: 10.5px 24px 8.75px 24px;
+  height: 36px;
+  white-space: nowrap;
+  font-family: "proxima-nova", "Proxima Nova", Arial Narrow, Optima, Times New Roman, Arial, sans-serif;
+  font-size: 0.92857rem;
+  font-weight: 600;
+  line-height: 14px;
+  text-transform: none;
+  text-align: center;
+  letter-spacing: 0.04em;
+  border-radius: 3px;
+  border: 1px solid transparent;
+  outline: none;
+  background-color: rgba(239, 242, 243, 0.6);
+  color: rgba(18, 27, 31, 0.2);
+  cursor: not-allowed; }
+  button[disabled]:hover,
+  [disabled] button:hover, button.disabled:hover,
+  .disabled button:hover {
+    background-color: rgba(244, 246, 247, 0.66); }
+  button[disabled]:active,
+  [disabled] button:active, button.disabled:active,
+  .disabled button:active {
+    background-color: rgba(158, 163, 165, 0.68); }
+  button[disabled] .fa,
+  [disabled] button .fa, button.disabled .fa,
+  .disabled button .fa {
+    float: left;
+    margin-right: 12px;
+    width: 1rem;
+    height: 1rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center; }
+  button[disabled]:hover, button[disabled]:active,
+  [disabled] button:hover,
+  [disabled] button:active, button.disabled:hover, button.disabled:active,
+  .disabled button:hover,
+  .disabled button:active {
+    background-color: rgba(239, 242, 243, 0.6);
+    border-color: transparent; }
+
+.button-action {
+  -webkit-transition: all 0.1s linear;
+  -moz-transition: all 0.1s linear;
+  transition: all 0.1s linear;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  padding: 10.5px 24px 8.75px 24px;
+  height: 36px;
+  white-space: nowrap;
+  font-family: "proxima-nova", "Proxima Nova", Arial Narrow, Optima, Times New Roman, Arial, sans-serif;
+  font-size: 0.92857rem;
+  font-weight: 600;
+  line-height: 14px;
+  text-transform: none;
+  text-align: center;
+  letter-spacing: 0.04em;
+  border-radius: 3px;
+  border: 1px solid transparent;
+  outline: none;
+  background-color: #2e9941;
+  color: white; }
+  .button-action:hover {
+    background-color: #4da85e; }
+  .button-action:active {
+    background-color: #28803a; }
+  .button-action .fa {
+    float: left;
+    margin-right: 12px;
+    width: 1rem;
+    height: 1rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center; }
+  .button-action[disabled],
+  [disabled] .button-action, .button-action.disabled,
+  .disabled .button-action {
+    -webkit-transition: all 0.1s linear;
+    -moz-transition: all 0.1s linear;
+    transition: all 0.1s linear;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    padding: 10.5px 24px 8.75px 24px;
+    height: 36px;
+    white-space: nowrap;
+    font-family: "proxima-nova", "Proxima Nova", Arial Narrow, Optima, Times New Roman, Arial, sans-serif;
+    font-size: 0.92857rem;
+    font-weight: 600;
+    line-height: 14px;
+    text-transform: none;
+    text-align: center;
+    letter-spacing: 0.04em;
+    border-radius: 3px;
+    border: 1px solid transparent;
+    outline: none;
+    background-color: rgba(239, 242, 243, 0.6);
+    color: rgba(18, 27, 31, 0.2);
+    cursor: not-allowed; }
+    .button-action[disabled]:hover,
+    [disabled] .button-action:hover, .button-action.disabled:hover,
+    .disabled .button-action:hover {
+      background-color: rgba(244, 246, 247, 0.66); }
+    .button-action[disabled]:active,
+    [disabled] .button-action:active, .button-action.disabled:active,
+    .disabled .button-action:active {
+      background-color: rgba(158, 163, 165, 0.68); }
+    .button-action[disabled] .fa,
+    [disabled] .button-action .fa, .button-action.disabled .fa,
+    .disabled .button-action .fa {
+      float: left;
+      margin-right: 12px;
+      width: 1rem;
+      height: 1rem;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center; }
+    .button-action[disabled]:hover, .button-action[disabled]:active,
+    [disabled] .button-action:hover,
+    [disabled] .button-action:active, .button-action.disabled:hover, .button-action.disabled:active,
+    .disabled .button-action:hover,
+    .disabled .button-action:active {
+      background-color: rgba(239, 242, 243, 0.6);
+      border-color: transparent; }
+
+.button-base {
+  -webkit-transition: all 0.1s linear;
+  -moz-transition: all 0.1s linear;
+  transition: all 0.1s linear;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  padding: 10.5px 24px 8.75px 24px;
+  height: 36px;
+  white-space: nowrap;
+  font-family: "proxima-nova", "Proxima Nova", Arial Narrow, Optima, Times New Roman, Arial, sans-serif;
+  font-size: 0.92857rem;
+  font-weight: 600;
+  line-height: 14px;
+  text-transform: none;
+  text-align: center;
+  letter-spacing: 0.04em;
+  border-radius: 3px;
+  border: 1px solid #eff2f3;
+  outline: none;
+  background-color: white;
+  color: #2e9941; }
+  .button-base:hover {
+    background-color: white; }
+  .button-base:active {
+    background-color: #d0d1d2; }
+  .button-base .fa {
+    float: left;
+    margin-right: 12px;
+    width: 1rem;
+    height: 1rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center; }
+  .button-base:hover {
+    background-color: #eaf5ec;
+    border-color: #2e9941; }
+  .button-base:active {
+    background-color: #d5ebd9;
+    border-color: #2e9941; }
+  .button-base[disabled],
+  [disabled] .button-base, .button-base.disabled,
+  .disabled .button-base {
+    -webkit-transition: all 0.1s linear;
+    -moz-transition: all 0.1s linear;
+    transition: all 0.1s linear;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    padding: 10.5px 24px 8.75px 24px;
+    height: 36px;
+    white-space: nowrap;
+    font-family: "proxima-nova", "Proxima Nova", Arial Narrow, Optima, Times New Roman, Arial, sans-serif;
+    font-size: 0.92857rem;
+    font-weight: 600;
+    line-height: 14px;
+    text-transform: none;
+    text-align: center;
+    letter-spacing: 0.04em;
+    border-radius: 3px;
+    border: 1px solid transparent;
+    outline: none;
+    background-color: rgba(239, 242, 243, 0.6);
+    color: rgba(18, 27, 31, 0.2);
+    cursor: not-allowed; }
+    .button-base[disabled]:hover,
+    [disabled] .button-base:hover, .button-base.disabled:hover,
+    .disabled .button-base:hover {
+      background-color: rgba(244, 246, 247, 0.66); }
+    .button-base[disabled]:active,
+    [disabled] .button-base:active, .button-base.disabled:active,
+    .disabled .button-base:active {
+      background-color: rgba(158, 163, 165, 0.68); }
+    .button-base[disabled] .fa,
+    [disabled] .button-base .fa, .button-base.disabled .fa,
+    .disabled .button-base .fa {
+      float: left;
+      margin-right: 12px;
+      width: 1rem;
+      height: 1rem;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center; }
+    .button-base[disabled]:hover, .button-base[disabled]:active,
+    [disabled] .button-base:hover,
+    [disabled] .button-base:active, .button-base.disabled:hover, .button-base.disabled:active,
+    .disabled .button-base:hover,
+    .disabled .button-base:active {
+      background-color: rgba(239, 242, 243, 0.6);
+      border-color: transparent; }
+
+/* Commmon code duplicated from Wifast-Base.
+ * - common/css/_importzone.scss
+ * IMPORTANT: Changes to this file MUST also be made in Wifast-Base to maintain code consistency
+ */
+/* Commmon code duplicated from Wifast-Base.
+ * - common/css/_mixins.scss
+ * IMPORTANT: Changes to this file MUST also be made in Wifast-Base to maintain code consistency
+ */
+/**
+ * Mixins for commonly used styles
+ */
+/* Commmon code duplicated from Wifast-Base.
+ * - common/css/_palettes.scss
+ * IMPORTANT: Changes to this file MUST also be made in Wifast-Base to maintain code consistency
+ */
+/**
+ * Color scheme from the style guide
+ */
+.import-zone {
+  cursor: pointer;
+  display: table;
+  height: 313px;
+  width: 100%;
+  border: dashed 1px rgba(18, 27, 31, 0.3);
+  border-radius: 5px;
+  background-color: rgba(239, 242, 243, 0.5); }
+  .import-zone.loading {
+    cursor: default; }
+  .import-zone > .loading-container {
+    position: absolute;
+    width: 54.5px;
+    height: 98.5px;
+    top: 50%;
+    left: 50%;
+    margin: -37px 0 0 -27px; }
+    .import-zone > .loading-container > .loading {
+      height: 100%;
+      background-image: url("/static/images/predefined/dashboard-loader.gif");
+      background-size: cover; }
+  .import-zone > .empty {
+    display: table-cell;
+    vertical-align: middle; }
+    .import-zone > .empty > .logo,
+    .import-zone > .empty > .error {
+      margin: 0 auto;
+      height: 67px;
+      width: 67px;
+      background-size: cover; }
+    .import-zone > .empty > .logo {
+      background-image: url("/static/images/predefined/placeholder@200px.png"); }
+    .import-zone > .empty > .error {
+      margin-bottom: 15px;
+      background-image: url("/static/images/predefined/upload-error@2x.png"); }
+    .import-zone > .empty > .text {
+      padding: 0 40px;
+      color: rgba(41, 63, 77, 0.5);
+      font-weight: 700;
+      text-align: center; }
+      .import-zone > .empty > .text em {
+        font-style: normal;
+        color: #2e9941;
+        text-transform: uppercase; }
+
+.image-upload-modal .modal-container {
+  width: 400px;
+  height: 458px;
+  padding: 20px 31px 34px; }
+  .image-upload-modal .modal-container .line {
+    margin: 20px -31px 24px;
+    border-top: solid 1px #eff2f3; }
+
+/* Commmon code duplicated from Wifast-Base.
+ * - portal/css/common.scss
+ * IMPORTANT: Changes to this file MUST also be made in Wifast-Base to maintain code consistency
+ */
+/**
+ * Common styles for Portal
+ */
+/* Dimensions */
+/* Z indexes */
+/**
+ * Common styles for Portal
+ */
+/* Button styles for Portal that override the default common buttons */
+/* Acts as a media query mixin but only applies the responsive
+   styles if the element is namespaced with '.responsive' */
+.portal-renderer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 100%;
+  min-width: 320px;
+  height: 100%;
+  font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  font-size: 16px; }
+  @media screen and (min-width: 480.01px) {
+    .responsive .portal-renderer {
+      margin: 60px auto;
+      height: auto;
+      width: 90%;
+      max-width: 508px;
+      min-height: 426px; } }
+  .portal-renderer .component-wrapper {
+    position: relative; }
+    .portal-renderer .component-wrapper * {
+      pointer-events: none; }
+  .portal-renderer .loading-screen {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background-color: white; }
+    .portal-renderer .loading-screen .loading-container {
+      position: absolute;
+      width: 90px;
+      height: 30px;
+      top: 50%;
+      left: 50%;
+      margin: -15px 0 0 -45px; }
+      .portal-renderer .loading-screen .loading-container .loading-animation {
+        position: relative;
+        height: 30px;
+        width: 90px; }
+        .portal-renderer .loading-screen .loading-container .loading-animation .bar {
+          position: absolute;
+          height: 0;
+          bottom: 0;
+          width: 10px;
+          background: #3498db;
+          border-radius: 2px; }
+          .portal-renderer .loading-screen .loading-container .loading-animation .bar:nth-child(0) {
+            left: -15px;
+            animation: bottom-top 2s infinite ease-in-out 0s; }
+          .portal-renderer .loading-screen .loading-container .loading-animation .bar:nth-child(1) {
+            left: 0px;
+            animation: bottom-top 2s infinite ease-in-out 0.2s; }
+          .portal-renderer .loading-screen .loading-container .loading-animation .bar:nth-child(2) {
+            left: 15px;
+            animation: bottom-top 2s infinite ease-in-out 0.4s; }
+          .portal-renderer .loading-screen .loading-container .loading-animation .bar:nth-child(3) {
+            left: 30px;
+            animation: bottom-top 2s infinite ease-in-out 0.6s; }
+          .portal-renderer .loading-screen .loading-container .loading-animation .bar:nth-child(4) {
+            left: 45px;
+            animation: bottom-top 2s infinite ease-in-out 0.8s; }
+          .portal-renderer .loading-screen .loading-container .loading-animation .bar:nth-child(5) {
+            left: 60px;
+            animation: bottom-top 2s infinite ease-in-out 1s; }
+          .portal-renderer .loading-screen .loading-container .loading-animation .bar:nth-child(6) {
+            left: 75px;
+            animation: bottom-top 2s infinite ease-in-out 1.2s; }
+
+@keyframes bottom-top {
+  0% {
+    height: 0;
+    opacity: 0; }
+  50% {
+    height: 30px;
+    opacity: 1; }
+  100% {
+    height: 0;
+    opacity: 0; } }
+  .portal-renderer .portal-page-footer {
+    width: 100%; }
+    .portal-renderer .portal-page-footer .zr-logo {
+      margin: 0 auto;
+      height: 60px;
+      background: url("data:image/png;base64,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") center no-repeat; }
+  .portal-renderer .notification-bar {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    font-size: 12px; }
+    .portal-renderer .notification-bar > .notification {
+      height: auto; }
+    .portal-renderer .notification-bar .button-close {
+      display: none; }
+  .portal-renderer .fullscreen-error {
+    display: table;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: white;
+    color: #797979;
+    text-align: center;
+    padding: 20px; }
+    .portal-renderer .fullscreen-error .message {
+      display: table-cell;
+      vertical-align: middle; }
+      .portal-renderer .fullscreen-error .message .main {
+        font-size: 26px; }
+
+/*# sourceMappingURL=portalrenderer.css.map*/

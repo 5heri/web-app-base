@@ -1,0 +1,127 @@
+/* Commmon code duplicated from Wifast-Base.
+ * - common/css/_button.scss
+ * IMPORTANT: Changes to this file MUST also be made in Wifast-Base to maintain code consistency
+ */
+
+/**
+ * Button styles from the style guide
+ */
+
+$button-font-size: 0.9285714286rem;
+$button-letter-spacing: 0.04em;
+$button-line-height: 14px;
+$button-height: 36px;
+$button-padding-top: 10.5px;
+$button-padding-bottom: 8.75px;
+$button-padding-left: $base-spacing;
+$button-padding-right: $base-spacing;
+
+@mixin button($color, $background, $border-color: transparent) {
+  @include transition(all .1s linear);
+  @include clickable;
+  @include appearance(none);
+
+  padding: $button-padding-top $button-padding-right $button-padding-bottom $button-padding-left;
+  height: $button-height;
+  white-space: nowrap;
+  font-family: $base-font;
+  font-size: $button-font-size;
+  font-weight: $semibold-font-weight;
+  line-height: $button-line-height;
+  text-transform: none;
+  text-align: center;
+  letter-spacing: $button-letter-spacing;
+  border-radius: $base-border-radius;
+  border: 1px solid $border-color;
+  outline: none;
+  background-color: $background;
+  color: $color;
+
+  &:hover {
+    background-color: mix($background, $white, 85%);
+  }
+
+  &:active {
+    background-color: mix($background, $black, 80%);
+  }
+
+  .fa {
+    float: left;
+    margin-right: $small-spacing;
+    width: 1rem;
+    height: 1rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+@mixin base-button {
+  @include button($base-active-color, $base-background-color, $light-gray);
+
+  &:hover {
+    background-color: mix($base-active-color, $white, 10%);
+    border-color: $base-active-color;
+  }
+
+  &:active {
+    background-color: mix($base-active-color, $white, 20%);
+    border-color: $base-active-color;
+  }
+
+  &[disabled],
+  [disabled] &,
+  &.disabled,
+  .disabled & {
+    @include disabled-button;
+  }
+}
+
+@mixin action-button {
+  @include button($base-background-color, $base-active-color);
+
+  &[disabled],
+  [disabled] &,
+  &.disabled,
+  .disabled & {
+    @include disabled-button;
+  }
+}
+
+@mixin disabled-button {
+  @include button($black-alpha-20, $lightest-gray);
+  cursor: not-allowed;
+
+  &:hover,
+  &:active {
+    background-color: $lightest-gray;
+    border-color: transparent;
+  }
+}
+
+@mixin button-round($background: $black, $color: $white, $size: 50px) {
+  width: $size;
+  height: $size;
+  display: inline-block;
+  line-height: $size;
+  background-color: $background;
+  color: $color;
+  border-radius: 50%;
+}
+
+button {
+  &[disabled],
+  [disabled] &,
+  &.disabled,
+  .disabled & {
+    @include disabled-button;
+  }
+}
+
+.button-action {
+  @include action-button;
+}
+
+.button-base {
+  @include base-button;
+}

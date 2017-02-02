@@ -1,0 +1,157 @@
+/* Commmon code duplicated from Wifast-Base.
+ * - common/css/_floatinglabeltextfield.scss
+ * IMPORTANT: Changes to this file MUST also be made in Wifast-Base to maintain code consistency
+ */
+
+@import '../../third-party/css/bourbon/bourbon';
+@import 'variables';
+
+$input-padding: 5px;
+$input-line-height: 20px;
+
+.floating-label-text-field {
+  font-family: $base-font;
+
+  &.fl-container {
+    position: relative;
+    height: 50px;
+
+    .fl-label {
+      /* Needed here for smooth animation when label moves from the input field, and back to it */
+      @include transform-origin(left top);
+      @include transition(240ms);
+
+      position: absolute;
+      bottom: $input-padding;
+      left: 0;
+      z-index: $floating-label-z-index;
+      margin-bottom: 0;
+      line-height: $input-line-height;
+      color: $gray;
+      pointer-events: none;
+    }
+
+    .fl-input-wrapper {
+      padding: $input-padding 0;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: $floating-input-z-index;
+      width: 100%;
+      border-bottom: 1px solid $black-alpha-40;
+      margin-bottom: 1px;
+
+      .fl-input {
+        padding: 0;
+        margin-bottom: 0;
+        height: auto; // override default height of 32px for inputs
+        line-height: $input-line-height;
+        font-size: $large-font-size;
+        border: 0;
+        border-radius: 0px;
+        background: transparent;
+
+        &:-webkit-autofill { // remove yellow prefill background on chrome
+          -webkit-box-shadow: 0 0 0px 1000px white inset;
+        }
+
+        @include placeholder {
+          color: $black-alpha-40;
+        }
+      }
+    }
+
+    .show-pw {
+      position: absolute;
+      z-index: 2;
+      top: 31px;
+      right: 8px;
+      height: 10px;
+      width: 20px;
+      background-image: url('/static/images/elmo/login/icon-show.png');
+      background-size: 100% 100%;
+      cursor: pointer;
+
+      &.shown {
+        background-image: url('/static/images/elmo/login/icon-hide.png');
+      }
+    }
+
+    .max-length {
+      position: absolute;
+      right: 0;
+      bottom: -21px;
+      font-size: 12px;
+      color: $gray;
+    }
+
+    /* Input style against dark background */
+    &.dark {
+      .fl-label {
+        color: $medium-gray;
+      }
+
+      .fl-input-wrapper {
+        border-bottom: 1px solid $medium-gray;
+
+        .fl-input {
+          color: $medium-gray;
+
+          @include placeholder {
+            color: $medium-gray;
+          }
+        }
+      }
+    }
+
+    /* State when label is floating above the input field */
+    &.floating {
+      .fl-label {
+        @include transform(translateY(-18px) scale(0.65));
+      }
+
+      .fl-input-wrapper {
+        border-bottom: 1px solid $black-alpha-40;
+
+        .fl-input {
+          background-color: transparent;
+        }
+      }
+    }
+
+    /* State when input is focused */
+    &.active {
+      .fl-label {
+        color: $green;
+      }
+
+      .fl-input-wrapper {
+        border-bottom: 2px solid $green;
+        margin-bottom: 0px;
+      }
+    }
+
+    /* State when the floating label is hidden */
+    &.hide-floating-label {
+      height: 30px;
+
+      &.floating {
+        .fl-label {
+          display: none;
+        }
+      }
+    }
+
+    /* State on input error */
+    &.error {
+      .fl-label {
+        color: $red;
+      }
+
+      .fl-input-wrapper {
+        border-bottom: 2px solid $red;
+        margin-bottom: 0px;
+      }
+    }
+  }
+}

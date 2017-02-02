@@ -1,0 +1,28 @@
+/* Commmon code duplicated from Wifast-Base.
+ * - portal/css/common.scss
+ * IMPORTANT: Changes to this file MUST also be made in Wifast-Base to maintain code consistency
+ */
+
+/**
+ * Common styles for Portal
+ */
+
+$facebook-color: #3b5999;
+$twitter-color: #73cbf3;
+$instagram-color: $black;
+
+$portal-images-path: '/static/images/elmo/portal';
+
+/* Dimensions */
+$portal-wrapper-height: 668px;
+$portal-header-height: 107px;
+$portal-navbar-height: 56px;
+$portal-sidebar-width: 300px;
+$portal-ew-toolbar-height: 41px;
+
+/* Z indexes */
+$portal-navbar-z-index: $max-z-index;
+$portal-sidebar-z-index: $portal-navbar-z-index - 1;
+$portal-popover-z-index: $portal-sidebar-z-index;
+$portal-editable-wrapper-z-index: 3;
+$component-z-index: 1;

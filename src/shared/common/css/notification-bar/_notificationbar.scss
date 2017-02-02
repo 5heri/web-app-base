@@ -1,0 +1,72 @@
+/* Commmon code duplicated from Wifast-Base.
+ * - common/css/notification-bar/_notificationbar.scss
+ * IMPORTANT: Changes to this file MUST also be made in Wifast-Base to maintain code consistency
+ */
+
+@import '../../../third-party/css/bourbon/bourbon';
+@import '../variables';
+@import '../mixins';
+
+.notification-bar {
+  position: fixed;
+  top: 0;
+  left: $sidebar-width;
+  @include calc(width, "100% - #{$sidebar-width}");
+  z-index: $max-z-index;
+
+  .notification {
+    position: relative;
+    width: 100%;
+    height: 46px;
+    padding: 14px 0;
+    text-align: center;
+    color: $white;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.23);
+
+    > .button-close {
+      @include clickable;
+
+      position: absolute;
+      top: 14px;
+      right: 11px;
+      width: 18px;
+      height: 19px;
+      background: url(/static/images/elmo/modal/ic-close@2x.png) center no-repeat;
+      background-size: contain;
+    }
+
+    &.success {
+      background-color: $green;
+    }
+
+    &.error {
+      background-color: $red;
+    }
+
+    &.warning {
+      background-color: $orange;
+    }
+
+    &.info {
+      background-color: $blue;
+    }
+  }
+
+  .fade-appear {
+    opacity: 0.01;
+
+    &.fade-appear-active {
+      opacity: 1;
+      transition: opacity 300ms ease-in;
+    }
+  }
+
+  .fade-leave {
+    opacity: 1;
+
+    &.fade-leave-active {
+      opacity: 0.01;
+      transition: opacity 300ms ease-in;
+    }
+  }
+}

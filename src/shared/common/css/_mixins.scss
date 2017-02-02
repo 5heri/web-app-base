@@ -1,0 +1,128 @@
+/* Commmon code duplicated from Wifast-Base.
+ * - common/css/_mixins.scss
+ * IMPORTANT: Changes to this file MUST also be made in Wifast-Base to maintain code consistency
+ */
+
+/**
+ * Mixins for commonly used styles
+ */
+
+@mixin clickable {
+  cursor: pointer;
+}
+
+@mixin hoverable-text($color: $gray) {
+  border-bottom: 1px dashed $color;
+}
+
+@mixin ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin grab {
+  cursor: move;
+  cursor: -moz-grab;
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+
+@mixin grabbing {
+  cursor: move;
+  cursor: -moz-grabbing;
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
+}
+
+@mixin grabbable {
+  @include grab;
+
+  &:active {
+    @include grabbing;
+  }
+}
+
+@mixin wordwrap {
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+}
+
+@mixin list-unstyled {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+@mixin content-section-border($border-color: $blue) {
+  border-radius: 4px;
+  border-top: 6px solid $border-color;
+}
+
+@mixin design-block {
+  @include grabbable;
+
+  margin-top: 12px;
+  margin-bottom: 12px;
+
+  .name {
+    font-weight: $semibold-font-weight;
+    color: $base-active-color;
+    text-align: center;
+  }
+
+  .icon-wrapper {
+    @include transition(all .1s linear);
+    @include transform(rotate(0deg));
+
+    float: left;
+    padding-top: 28px;
+    padding-bottom: 28px;
+    width: 100%;
+    max-width: 100px;
+    margin-bottom: 10px;
+    border: 2px solid $light-gray;
+    border-bottom-width: 4px;
+    border-radius: $base-border-radius;
+    background: $white;
+    text-align: center;
+    line-height: 0;
+    font-size: 0;
+
+    .icon {
+      display: inline-block;
+      height: 40px;
+      width: 40px;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+  }
+
+  &.mouseover .icon-wrapper {
+    @include transform(rotate(5deg));
+    box-shadow: -1px 2px 8px $light-gray;
+
+    &:active {
+      box-shadow: -1px 2px 8px $gray;
+    }
+  }
+}
+
+@mixin disabled-design-block {
+  cursor: not-allowed;
+
+  .name {
+    color: $gray;
+  }
+
+  .icon-wrapper {
+    @include transform(rotate(0deg) !important);
+    background-color: $light-gray;
+    box-shadow: none !important;
+    box-shadow: none;
+    pointer-events: none;
+  }
+}

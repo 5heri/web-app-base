@@ -1,0 +1,79 @@
+@import '../shared/third-party/css/bourbon/bourbon';
+@import '../shared/third-party/css/neat/neat';
+@import '../shared/common/css/variables';
+@import '../shared/common/css/palettes';
+@import '../shared/common/css/mixins';
+@import '../shared/common/css/button';
+@import '../shared/common/css/importzone';
+@import '../shared/portal/css/common';
+
+/**
+ * Common styles for Portal
+ */
+
+$primary-button-color: #42b7b1;
+$portal-images-path: '../img';
+$portal-footer-height: 60px;
+
+$sidebar-width: 300px;
+
+/* Button styles for Portal that override the default common buttons */
+$button-font-size: 16px;
+$button-height: 50px;
+$button-line-height: 20px;
+$button-padding-top: 15px;
+$button-padding-bottom: 15px;
+$button-border-radius: 2px;
+$button-margin-bottom: 12px;
+
+@mixin portal-button() {
+  @include transition(none);
+  display: block;
+  padding-top: $button-padding-top;
+  padding-bottom: $button-padding-bottom;
+  margin: 0 auto $button-margin-bottom auto;
+  width: 100%;
+  max-width: 325px;
+  font-size: $button-font-size;
+  font-weight: $base-font-weight;
+  line-height: $button-line-height;
+  border-radius: $button-border-radius;
+  text-transform: none;
+
+  @include portal-responsive($larger-than-mobile) {
+    max-width: 310px;
+  }
+
+  i {
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  &[disabled],
+  [disabled] &,
+  &.disabled,
+  .disabled & {
+    opacity: 0.5;
+  }
+}
+
+/* Acts as a media query mixin but only applies the responsive
+   styles if the element is namespaced with '.responsive' */
+@mixin portal-responsive($query) {
+  @include media($query) {
+    .responsive & {
+      @content;
+    }
+  }
+}
+
+@mixin full-width-section() {
+  margin-left: -25px;
+  width: calc(100% + 50px);
+
+  @include portal-responsive($larger-than-mobile) {
+    width: calc(100% + 80px);
+    height: 241px;
+    margin-left: -40px;
+  }
+}

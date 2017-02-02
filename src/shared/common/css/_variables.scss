@@ -1,0 +1,114 @@
+/* Commmon code duplicated from Wifast-Base.
+ * - common/css/_variables.scss
+ * IMPORTANT: Changes to this file MUST also be made in Wifast-Base to maintain code consistency
+ */
+
+/**
+ * Global variables from the style guide
+ */
+
+@import 'palettes';
+
+/* Layout */
+
+$base-border-radius: 3px;
+
+/* Color Scheme */
+
+$base-active-color: $green;
+$base-background-color: $white;
+$secondary-background-color: $light-gray;
+
+/* Typography */
+
+$base-font: "proxima-nova", "Proxima Nova", Arial Narrow, Optima, Times New Roman, Arial, sans-serif !default;
+$monospace-font: monospace, monospace;
+$base-websafe-font: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$base-text-color: $black;
+
+/* Font Sizes */
+
+$small-font-size: 12px;
+$base-font-size: 14px;
+$large-font-size: 16px;
+$h1-font-size: 26px;
+$h2-font-size: $large-font-size;
+$h3-font-size: $large-font-size;
+$h4-font-size: $base-font-size;
+$chart-title-font-size: $large-font-size;
+$modal-title-font-size: $large-font-size;
+
+/* Font Weights */
+
+$base-font-weight: 400;
+$semibold-font-weight: 600;
+$bold-font-weight: 700;
+
+/* Text Properties */
+
+$base-letter-spacing: 0.5px;
+$base-line-height: 1.5;
+
+/* Spacing */
+
+$base-spacing: $base-line-height * $large-font-size;
+$small-spacing: $base-spacing / 2;
+$smaller-spacing: $base-spacing / 3;
+
+/* Z-index */
+
+$max-z-index: 10000;
+$tooltip-z-index: $max-z-index + 1; // tooltips go on top of all normal elements
+$inline-loading-mask-z-index: $max-z-index + 2; // inline loading mask goes under an active modal
+$modal-z-index: $max-z-index + 3; // modals go on top of all normal elements
+$loading-mask-z-index: $modal-z-index + 4; // loading masks go on top of modals
+
+/* Inputs */
+
+$input-height: 36px;
+$input-background-color: $light-gray;
+$input-color: $black;
+$input-disabled-color: $black-alpha-20;
+$input-placeholder-color: $black-alpha-20;
+$input-hover-border-color: darken($input-background-color, 5);
+$input-error-color: $red;
+$input-success-color: $base-active-color;
+$input-active-border-color: $base-active-color;
+
+/* Inputs z-index */
+
+$floating-input-z-index: 1;
+$floating-label-z-index: $floating-input-z-index + 1; // IE does not respect element stacking order without explicit configuration
+$select-dropdown-z-index: $floating-label-z-index + 1;
+
+/* Animations */
+
+$base-duration: 150ms;
+
+/* Media Queries */
+
+$tablet-height: 768px;
+$desktop-height: 960px;
+$large-desktop-height: 1280px;
+
+$smallest-screen: new-breakpoint(max-width 320px);
+$mobile: new-breakpoint(max-width 480px);
+$tablet: new-breakpoint(max-width 768px);
+$desktop: new-breakpoint(max-width 960px);
+$large-desktop: new-breakpoint(max-width 1280px);
+
+$mobile-only: new-breakpoint(max-width 480px);
+$tablet-only: new-breakpoint(min-width 480.01px max-width 768px);
+$desktop-only: new-breakpoint(min-width 768.01px max-width 960px);
+$large-desktop-only: new-breakpoint(min-width 960.01px max-width 1280px);
+
+$larger-than-mobile: new-breakpoint(min-width 480.01px);
+$larger-than-tablet: new-breakpoint(min-width 768.01px);
+$larger-than-desktop: new-breakpoint(min-width 960.01px);
+$large-af-desktop: new-breakpoint(min-width 1280.01px);
+
+/* Sidebar */
+$sidebar-width: 225px;
+$sidebar-header-height: 84px;
+$location-dropdown-width: 320px;
+$location-search-height: 70px;

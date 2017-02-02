@@ -1,0 +1,43 @@
+/* Commmon code duplicated from Wifast-Base.
+ * - common/css/_palettes.scss
+ * IMPORTANT: Changes to this file MUST also be made in Wifast-Base to maintain code consistency
+ */
+
+/**
+ * Color scheme from the style guide
+ */
+
+$black: rgba(18, 27, 31, 1.0); // #121b1f
+$black-alpha-80: rgba(18, 27, 31, 0.8);
+$black-alpha-60: rgba(18, 27, 31, 0.6);
+$black-alpha-40: rgba(18, 27, 31, 0.4);
+$black-alpha-30: rgba(18, 27, 31, 0.3);
+$black-alpha-20: rgba(18, 27, 31, 0.2);
+
+$black-shadow: rgba(0, 0, 0, 0.3);
+
+$white: rgba(255, 255, 255, 1.0); // #ffffff
+$white-alpha-80: rgba(255, 255, 255, 0.8);
+$white-alpha-60: rgba(255, 255, 255, 0.6);
+$white-alpha-40: rgba(255, 255, 255, 0.4);
+$white-alpha-20: rgba(255, 255, 255, 0.2);
+
+$dark-gray: $black-alpha-80;
+$gray: #797979;
+$medium-gray: rgb(164, 175, 179); // #a4afb3
+$light-gray: rgba(239, 242, 243, 1.0); // #eff2f3;
+$lightest-gray: rgba(239, 242, 243, 0.6);
+$charcoal-gray: #3a434a;
+
+$zenbeach-green: #58c48c;
+$zenbeach-gray: #dee0e1;
+
+$red: #d0021b;
+$yellow: #f1d97b;
+$green: rgba(46, 153, 65, 1.0); // #2E9941
+$dark-mint: #58c48c;
+$purple: #A38FBE;
+$blue: #3498db;
+$navy: rgba(41, 63, 77, 1.0); // #293F4D
+$light-navy: #92a0a9;
+$orange: #ffbe47;

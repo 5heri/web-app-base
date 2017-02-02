@@ -1,0 +1,136 @@
+@import '../shared/common/css/notification-bar/notificationbar';
+@import './common';
+@import './images';
+
+.portal-renderer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 100%;
+  min-width: 320px;
+  height: 100%;
+  font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  font-size: 16px;
+
+  @include portal-responsive($larger-than-mobile) {
+    margin: 60px auto;
+    height: auto;
+    width: 90%;
+    max-width: 508px;
+    min-height: 426px;
+  }
+
+  // Mimic the dimensions of EditableWrapper in Wifast-Base so that onMouseOver event is accurate
+  .component-wrapper {
+    position: relative;
+
+    * {
+      pointer-events: none;
+    }
+  }
+
+  .loading-screen {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background-color: $white;
+
+    .loading-container {
+      position: absolute;
+      width: 90px;
+      height: 30px;
+      top: 50%;
+      left: 50%;
+      margin: -15px 0 0 -45px;
+
+      .loading-animation {
+        position: relative;
+        height: 30px;
+        width: 90px;
+
+        .bar {
+          position: absolute;
+          height: 0;
+          bottom: 0;
+          width: 10px;
+          background: $blue;
+          border-radius: 2px;
+
+          @for $i from 0 through 6 {
+            &:nth-child(#{$i}) {
+              left: ($i * 15px) - 15px;
+              animation: bottom-top 2s infinite ease-in-out ($i * 0.2s);
+            }
+          }
+        }
+      }
+
+      @keyframes bottom-top {
+        0% {
+          height: 0;
+          opacity: 0;
+        }
+
+        50% {
+          height: 30px;
+          opacity: 1;
+        }
+
+        100% {
+          height: 0;
+          opacity: 0;
+        }
+      }
+    }
+  }
+
+  .portal-page-footer {
+    width: 100%;
+
+    .zr-logo {
+      margin: 0 auto;
+      height: $portal-footer-height;
+      background: url('#{$zr-logo}') center no-repeat;
+    }
+  }
+
+  .notification-bar {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    font-size: $small-font-size;
+
+    > .notification {
+      height: auto;
+    }
+
+    .button-close {
+      display: none;
+    }
+  }
+
+  .fullscreen-error {
+    display: table;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: $white;
+    color: $gray;
+    text-align: center;
+    padding: 20px;
+
+    .message {
+      display: table-cell;
+      vertical-align: middle;
+
+      .main {
+        font-size: $h1-font-size;
+      }
+    }
+  }
+}
