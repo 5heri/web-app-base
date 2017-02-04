@@ -27,6 +27,7 @@ gulp.task('build',  task.get('build'));
 gulp.task('default', ['build']);
 
 gulp.task('dev-server', task.get('dev-server'));
+gulp.task('dev', ['dev-server']);
 
 // return non-zero exit code on eslint or other gulp failures
 process.on('exit', function() {
